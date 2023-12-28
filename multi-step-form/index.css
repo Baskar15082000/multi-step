@@ -1,0 +1,82 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Ubuntu", sans-serif;
+}
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+.buttons {
+  top: 13%;
+}
+.button {
+  border-style: solid;
+  border-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border-width: 2px;
+  text-align: center;
+}
+#cardbody {
+  top: 57%;
+}
+#footer {
+  margin-top: 97%;
+}
+.footerbutton {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border: none;
+  background-color: var(--marine-blue);
+  color: white;
+  border-radius: 6%;
+}
+
+.background {
+  background-color: var(--light-blue);
+}
+footer {
+  height: 10%;
+  background-color: white;
+}
+.img {
+  width: 40px;
+}
+.priceblock {
+  border-style: solid;
+  padding: 2px 0px 2px 8px;
+
+  border-color: rgb(243, 240, 240);
+  border-width: 0.1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.price {
+  padding-left: 10px;
+}
+.fot {
+  margin-left: auto;
+}
+.form-check {
+  margin-top: 0.5rem;
+
+  justify-content: space-around;
+  background-color: rgb(238, 232, 232);
+  border-radius: 0.5em;
+}
+#toggleSwitch {
+  width: 2.8rem;
+  height: 1.3rem;
+}
