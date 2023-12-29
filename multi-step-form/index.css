@@ -34,7 +34,7 @@
   top: 57%;
 }
 #footer {
-  margin-top: 97%;
+  margin-top: 90%;
 }
 .footerbutton {
   padding: 0.5rem 1rem 0.5rem 1rem;
@@ -62,7 +62,7 @@ footer {
   border-color: rgb(243, 240, 240);
   border-width: 0.1rem;
   border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 .price {
   padding-left: 10px;
@@ -71,11 +71,12 @@ footer {
   margin-left: auto;
 }
 .form-check {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 
   justify-content: space-around;
   background-color: rgb(238, 232, 232);
   border-radius: 0.5em;
+  margin-top: 1rem;
 }
 #toggleSwitch {
   width: 2.8rem;
@@ -113,4 +114,40 @@ footer {
 }
 .add {
   padding-left: 1rem;
+}
+.finish {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: var(--light-blue);
+  border-radius: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.final1 {
+  justify-content: space-between;
+  align-items: center;
+}
+.final2 {
+  justify-content: space-between;
+}
+.total {
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.thank {
+  align-items: center;
+}
+.thankimg {
+  width: 4.5rem;
+  padding-bottom: 1.5rem;
+  padding-top: 2rem;
+}
+.thankyou {
+  padding-bottom: 1.5rem;
+}
+.thankcont {
+  text-align: center;
+  padding-bottom: 3rem;
 }
