@@ -59,3 +59,25 @@
             Please provide a valid zip.
           </div>
         </div>
+
+
+
+
+
+
+        function gobackfunc() {
+  button.forEach((e) => (e.style.backgroundColor = ""));
+
+  if (currentStep === 2) {
+    cardBody.replaceChildren();
+    step1();
+    currentStep--;
+  } else if (currentStep === 3) {
+    currentStep--;
+    cardBody.replaceChildren();
+    step2(data, prices, prices1, link, "month");
+  } else if (currentStep === 4) {
+    cardBody.replaceChildren();
+    step3(step3data1, step3data2, step3data3, step3data4, check);
+  }
+}

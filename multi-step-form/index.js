@@ -18,7 +18,7 @@ function head(heading, subheading) {
 }
 
 function step1() {
-  document.getElementById("1").style.backgroundColor = "lightblue";
+  document.getElementById("b1").style.backgroundColor = "lightblue";
   head(
     "Personal info",
     "Please provide your name, email address, and phone number."
@@ -59,7 +59,7 @@ function step1() {
 }
 step1();
 function step2(data, prices, prices1, link, plan) {
-  document.getElementById("2").style.backgroundColor = "lightblue";
+  document.getElementById("b2").style.backgroundColor = "lightblue";
   head("Select your plan", "You have the option of monthly or yearly billing");
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
@@ -146,7 +146,7 @@ function step2(data, prices, prices1, link, plan) {
 // +$2/mo Customizable Profile Custom theme on your profile +$2/mo
 var check = "month";
 function step3(step3data1, step3data2, step3data3, step3data4, check) {
-  document.getElementById("3").style.backgroundColor = "lightblue";
+  document.getElementById("b3").style.backgroundColor = "lightblue";
   next[0].textContent = "Next step";
 
   head("Pick add-ons", "Add-ons help enhance your gaming experience.");
@@ -197,7 +197,7 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
 }
 
 function step4(val1, val2, check, arr1, arr2) {
-  document.getElementById("4").style.backgroundColor = "lightblue";
+  document.getElementById("b4").style.backgroundColor = "lightblue";
   next[0].textContent = "Confirm";
 
   head("Finishing up", "Double-check everything looks OK before confirming.");
@@ -371,7 +371,7 @@ function toggle(e) {
 
 function pageselect(e) {
   const block = document.getElementsByClassName(e.target.className);
-
+  console.log(block);
   for (let i = 0; i < block.length; i++) {
     block[i].style.borderColor = "gray";
   }
