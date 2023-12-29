@@ -55,6 +55,9 @@ footer {
   padding-top: 0.3rem;
   width: 40px;
 }
+body {
+  height: 100%;
+}
 .priceblock {
   border-style: solid;
   padding: 2px 0px 2px 8px;
@@ -167,4 +170,3 @@ footer {
   color: white;
   border-radius: 6%;
 }
-
