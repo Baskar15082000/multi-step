@@ -1,6 +1,10 @@
 var cardBody = document.getElementById("innercard");
 var goBack = document.querySelector(".goBack");
+goBack.addEventListener("click", gobackfunc);
 goBack.style.display = "none";
+const button = document.querySelectorAll(".button");
+const next = document.getElementsByClassName("footerbutton");
+
 var cardTitle = "";
 var cardSubtitle = "";
 var currentStep = 1;
@@ -14,6 +18,7 @@ function head(heading, subheading) {
 }
 
 function step1() {
+  document.getElementById("1").style.backgroundColor = "lightblue";
   head(
     "Personal info",
     "Please provide your name, email address, and phone number."
@@ -54,6 +59,7 @@ function step1() {
 }
 step1();
 function step2(data, prices, prices1, link, plan) {
+  document.getElementById("2").style.backgroundColor = "lightblue";
   head("Select your plan", "You have the option of monthly or yearly billing");
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
@@ -140,6 +146,9 @@ function step2(data, prices, prices1, link, plan) {
 // +$2/mo Customizable Profile Custom theme on your profile +$2/mo
 var check = "month";
 function step3(step3data1, step3data2, step3data3, step3data4, check) {
+  document.getElementById("3").style.backgroundColor = "lightblue";
+  next[0].textContent = "Next step";
+
   head("Pick add-ons", "Add-ons help enhance your gaming experience.");
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
@@ -188,6 +197,9 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
 }
 
 function step4(val1, val2, check, arr1, arr2) {
+  document.getElementById("4").style.backgroundColor = "lightblue";
+  next[0].textContent = "Confirm";
+
   head("Finishing up", "Double-check everything looks OK before confirming.");
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
@@ -250,6 +262,9 @@ function step4(val1, val2, check, arr1, arr2) {
 }
 
 function step5() {
+  const footer = document.querySelectorAll(".footer");
+  footer[0].style.visibility = "hidden";
+  console.log(footer);
   const newdiv = document.createElement("div");
   newdiv.className = "thank d-flex flex-column";
   const div1 = document.createElement("img");
@@ -287,7 +302,6 @@ const link = [
 ];
 const prices1 = ["$90/yr", "$120/yr", "$150/yr"];
 
-const next = document.getElementsByClassName("footerbutton");
 console.log(next);
 var vans1 = "";
 var vans2 = "";
@@ -295,6 +309,8 @@ var arr1 = [];
 var arr2 = [];
 next[0].addEventListener("click", nextpage);
 function nextpage(e) {
+  button.forEach((e) => (e.style.backgroundColor = ""));
+
   if (currentStep === 1) {
     cardBody.replaceChildren();
     step2(data, prices, prices1, link, "month");
@@ -309,6 +325,25 @@ function nextpage(e) {
   } else {
     cardBody.replaceChildren();
     step5();
+  }
+}
+
+function gobackfunc() {
+  button.forEach((e) => (e.style.backgroundColor = ""));
+
+  if (currentStep === 2) {
+    cardBody.replaceChildren();
+    step1();
+    currentStep--;
+  } else if (currentStep === 3) {
+    currentStep--;
+    cardBody.replaceChildren();
+    step2(data, prices, prices1, link, "month");
+    var toggleSwitch = document.getElementById("toggleSwitch");
+    toggleSwitch.addEventListener("change", toggle);
+  } else if (currentStep === 4) {
+    cardBody.replaceChildren();
+    step3(step3data1, step3data2, step3data3, step3data4, check);
   }
 }
 
