@@ -33,7 +33,7 @@
 #cardbody {
   top: 57%;
 }
-#footer {
+.footer {
   margin-top: 90%;
 }
 .footerbutton {
@@ -56,7 +56,7 @@ footer {
   width: 40px;
 }
 body {
-  height: 100%;
+  height: 100vh;
 }
 .priceblock {
   border-style: solid;
