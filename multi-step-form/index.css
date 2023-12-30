@@ -184,6 +184,7 @@ body {
 }
 .thank {
   align-items: center;
+  justify-content: center;
 }
 .thankimg {
   width: 5.5rem;
@@ -210,4 +211,92 @@ body {
   background-color: var(--marine-blue);
   color: white;
   border-radius: 6%;
+}
+.imagedesktop {
+  display: none;
+}
+.footerdesktop {
+  display: none;
+}
+.db_1 {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  * {
+    overflow: hidden;
+  }
+  .image {
+    display: none;
+  }
+  .imagedesktop {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 100%;
+    margin-left: 5px;
+    margin-right: auto;
+  }
+  #div {
+    top: 10%;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: white;
+    width: 70%;
+    height: 80%;
+    border-radius: 16px;
+  }
+
+  #cardbody {
+    top: 1%;
+    left: 40%;
+    height: 100%;
+    border: none;
+    margin-right: -10%;
+  }
+  .buttons {
+    flex-direction: row;
+    left: 1%;
+  }
+  .footer {
+    width: 30rem;
+    left: 44%;
+    top: 80%;
+    bottom: 11%;
+  }
+  .priceblock {
+    width: 8.2rem;
+  }
+  .img {
+    padding-left: 5px;
+  }
+  .addOn {
+    width: 27rem;
+  }
+  .finish {
+    width: 27rem;
+  }
+  .thankcont {
+    width: 28rem;
+  }
+  .thank {
+    padding-top: 2rem;
+  }
+  .db_1 {
+    display: block;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+  }
+  .tag {
+    padding-bottom: 0.8rem;
+  }
+  .step {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--cool-gray);
+  }
+  .info {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: white;
+  }
 }

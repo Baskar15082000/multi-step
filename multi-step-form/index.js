@@ -25,7 +25,7 @@ function head(heading, subheading) {
 
 function step1() {
   document.getElementById("b1").style.backgroundColor = "var(--light-blue)";
-
+  goBack.style.display = "none";
   head(
     "Personal info",
     "Please provide your name, email address, and phone number."
@@ -78,9 +78,11 @@ function step2(data, prices, prices1, link, plan) {
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
   const page1outer = document.createElement("div");
+  page1outer.className = "page_2  d-flex flex-column  flex-lg-row";
   for (let i = 0; i < 3; i++) {
     const maindiv = document.createElement("div");
-    maindiv.className = "priceblock";
+    maindiv.className =
+      "priceblock  m-lg-2 p-lg-2 py-lg-3 d-flex flex-lg-column ";
     maindiv.id = i;
     maindiv.classList.add("d-flex");
     const div1 = document.createElement("img");
@@ -90,7 +92,7 @@ function step2(data, prices, prices1, link, plan) {
     div1.setAttribute("alt", "");
 
     const div2 = document.createElement("div");
-    div2.className = "price";
+    div2.className = "price py-lg-4";
 
     const sub1 = document.createElement("div");
     sub1.className = "sub1";
@@ -172,7 +174,7 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
   page3outer.className = "page3outer";
   for (let i = 0; i < 3; i++) {
     const maindiv = document.createElement("div");
-    maindiv.className = "addOn py-2";
+    maindiv.className = "addOn py-2 ";
     maindiv.id = i;
     maindiv.classList.add("d-flex");
     const div1 = document.createElement("div");
@@ -320,7 +322,7 @@ function step5() {
   div1.setAttribute("alt", "");
   const div2 = document.createElement("div");
   div2.className = "thankyou";
-  div2.textContent = "Thank yoy!";
+  div2.textContent = "Thank you!";
   const div3 = document.createElement("div");
   div3.className = "thankcont";
   div3.textContent =
