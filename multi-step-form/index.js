@@ -10,11 +10,17 @@ var cardSubtitle = "";
 var currentStep = 1;
 function head(heading, subheading) {
   cardTitle = document.createElement("h5");
+
   cardTitle.classList.add("card-title", "pt-1", "pb-1");
   cardTitle.textContent = heading;
+  cardTitle.style.color = "var(--marine-blue)";
+
   cardSubtitle = document.createElement("h6");
   cardSubtitle.classList.add("card-subtitle", "mb-2", "pb-1", "lh-2");
-  cardSubtitle.textContent = subheading;
+
+  cardSubtitle.style.color = "var(--cool-gray)";
+
+  cardSubtitle.innerHTML = "<span id='subhead'>" + subheading + "</span>";
 }
 
 function step1() {
@@ -31,10 +37,12 @@ function step1() {
     const label = document.createElement("label");
 
     label.textContent = labelText;
+    label.style.color = "var(--marine-blue)";
+    label.style.fontSize = ".9.4rem";
 
     const input = document.createElement("input");
     input.type = "text";
-    input.classList.add("form-control", "mb-2");
+    input.classList.add("form-control", "mb-3");
     input.id = "input";
     let placeholderText = "";
     if (labelText === "Name") {
@@ -45,6 +53,7 @@ function step1() {
       placeholderText = "e.g. +1 234 567 890";
     }
     input.placeholder = placeholderText;
+
     formGroup.appendChild(label);
     formGroup.appendChild(input);
   });
@@ -58,6 +67,8 @@ function step1() {
   card.appendChild(cardBody);
 }
 step1();
+var month = document.createElement("label");
+var year = document.createElement("label");
 function step2(data, prices, prices1, link, plan) {
   document.getElementById("b2").style.backgroundColor = "lightblue";
   head("Select your plan", "You have the option of monthly or yearly billing");
@@ -77,6 +88,7 @@ function step2(data, prices, prices1, link, plan) {
 
     const div2 = document.createElement("div");
     div2.className = "price";
+
     const sub1 = document.createElement("div");
     sub1.className = "sub1";
     const sub2 = document.createElement("div");
@@ -111,12 +123,11 @@ function step2(data, prices, prices1, link, plan) {
   containerDiv.className = "form-check form-switch d-flex py-2 px-5 ";
   containerDiv.id = "toggleSwitchContainer";
 
-  var month = document.createElement("label");
   month.className = "form-check-label ";
   month.htmlFor = "toggleSwitch";
   month.textContent = "Monthly";
+  month.style.color = "var(--marine-blue)";
 
-  var year = document.createElement("label");
   year.className = "form-check-label  ";
   year.htmlFor = "toggleSwitch";
   year.textContent = "Yearly";
@@ -144,10 +155,11 @@ function step2(data, prices, prices1, link, plan) {
 // Pick add-ons Add-ons help enhance your gaming experience. Online service
 // Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
 // +$2/mo Customizable Profile Custom theme on your profile +$2/mo
-var check = "month";
+var check = "monthly";
 function step3(step3data1, step3data2, step3data3, step3data4, check) {
   document.getElementById("b3").style.backgroundColor = "lightblue";
   next[0].textContent = "Next step";
+  next[0].style.backgroundColor = "var(--marine-blue)";
 
   head("Pick add-ons", "Add-ons help enhance your gaming experience.");
   cardBody.appendChild(cardTitle);
@@ -156,7 +168,7 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
   page3outer.className = "page3outer";
   for (let i = 0; i < 3; i++) {
     const maindiv = document.createElement("div");
-    maindiv.className = "addOn";
+    maindiv.className = "addOn py-2";
     maindiv.id = i;
     maindiv.classList.add("d-flex");
     const div1 = document.createElement("div");
@@ -171,9 +183,14 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
     div2.className = "add";
     const sub1 = document.createElement("div");
     sub1.className = "addsub1";
+    sub1.style.fontWeight = "500";
+    sub1.style.fontSize = ".9rem";
+    sub1.style.color = "var(--marine-blue)";
     const sub2 = document.createElement("div");
     sub2.className = "addsub2";
-
+    sub2.style.fontWeight = "400";
+    sub2.style.fontSize = ".75rem";
+    sub2.style.color = "var(--cool-gray)";
     sub1.textContent = step3data1[i];
     sub2.textContent = step3data2[i];
     div2.appendChild(sub1);
@@ -181,6 +198,9 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
     const div3 = document.createElement("div");
 
     div3.className = "div3sub d-flex";
+    div3.style.fontSize = ".9rem";
+    div3.style.color = "var(--purplish-blue)";
+
     if (check === "month") {
       div3.textContent = step3data3[i];
     } else {
@@ -199,6 +219,7 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
 function step4(val1, val2, check, arr1, arr2) {
   document.getElementById("b4").style.backgroundColor = "lightblue";
   next[0].textContent = "Confirm";
+  next[0].style.backgroundColor = "var(--purplish-blue)";
 
   head("Finishing up", "Double-check everything looks OK before confirming.");
   cardBody.appendChild(cardTitle);
@@ -214,11 +235,20 @@ function step4(val1, val2, check, arr1, arr2) {
   const div1sub1 = document.createElement("div");
   const div1sub2 = document.createElement("div");
   div1sub1.textContent = val1;
+  div1sub1.style.color = "var(--marine-blue)";
+  div1sub1.style.fontWeight = "500";
+  div1sub1.style.fontSize = ".9rem";
   div1sub2.innerHTML = `<u>change</u>`;
+  div1sub2.style.color = "var(--cool-gray)";
+  div1sub2.style.fontWeight = "400";
+  div1sub2.style.fontSize = ".9rem";
   div1sub2.style.textDecoratio;
   left1.append(div1sub1, div1sub2);
   const right1 = document.createElement("div");
   right1.textContent = val2;
+  right1.style.color = "var(--marine-blue)";
+  right1.style.fontWeight = "500";
+  right1.style.fontSize = ".9rem";
   div1.append(left1, right1);
   maindiv.appendChild(div1);
   var t0 = 0;
@@ -228,7 +258,13 @@ function step4(val1, val2, check, arr1, arr2) {
     const div2sub1 = document.createElement("div");
     const div2sub2 = document.createElement("div");
     div2sub1.textContent = arr1[i];
+    div2sub1.style.color = "var(--cool-gray)";
+    div2sub1.style.fontWeight = "400";
+    div2sub1.style.fontSize = ".9rem";
     div2sub2.textContent = arr2[i];
+    div2sub2.style.color = "var(--cool-gray)";
+    div2sub2.style.fontWeight = "400";
+    div2sub2.style.fontSize = ".9rem";
     t0 = arr2[i].split("$");
     t0 = t0.join(" ");
     t0 = t0.split("+");
@@ -244,6 +280,9 @@ function step4(val1, val2, check, arr1, arr2) {
   const finalsub1 = document.createElement("div");
   const finalsub2 = document.createElement("div");
   finalsub1.textContent = "Total (per " + check + ")";
+  finalsub1.style.color = "var(--cool-gray)";
+  finalsub1.style.fontWeight = "400";
+  finalsub1.style.fontSize = ".9rem";
   var t1 = 0;
   t1 = val2.split("$");
   t1 = t1.join(" ");
@@ -256,6 +295,7 @@ function step4(val1, val2, check, arr1, arr2) {
     total = "$" + total + "/yr";
   }
   finalsub2.textContent = total;
+  finalsub2.style.color = "var(--purplish-blue)";
   final.append(finalsub1, finalsub2);
   currentStep = 4;
   cardBody.appendChild(final);
@@ -278,7 +318,7 @@ function step5() {
   const div3 = document.createElement("div");
   div3.className = "thankcont";
   div3.textContent =
-    " Thank you! Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.";
+    " Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.";
 
   newdiv.append(div1, div2, div3);
   cardBody.appendChild(newdiv);
@@ -358,14 +398,19 @@ function toggle(e) {
       sub3[i].style.display = "block";
       sub4[i].style.display = "block";
     }
-    check = "year";
+    check = "yearly";
     console.log(sub3);
+    year.style.color = "var(--marine-blue)";
+    month.style.color = "";
   } else {
     for (let i = 0; i < 3; i++) {
       sub2[i].style.display = "block";
       sub3[i].style.display = "none";
       sub4[i].style.display = "none";
     }
+    month.style.color = "var(--marine-blue)";
+    year.style.color = "";
+    check = "monthly";
   }
 }
 
@@ -398,18 +443,28 @@ function pageselect(e) {
 }
 
 function pageselect1(e) {
-  e.target.style.borderColor = "blue";
+  e.target.style.borderColor = "var(--purplish-blue)";
   var parent = e.target.parentNode.parentNode;
   if (e.target.checked) {
-    parent.style.borderColor = "blue";
-  } else {
-    parent.style.borderColor = "gray";
-  }
-  const v1 = document.getElementById(e.target.parentNode.parentNode.id);
-  const v2 = v1.getElementsByClassName("add");
-  const v3 = v2[0].getElementsByClassName("addsub1");
-  const v4 = v1.getElementsByClassName("div3sub");
+    parent.style.borderColor = "var(--purplish-blue)";
+    parent.style.backgroundColor = "var(--light-blue)";
+    const v1 = document.getElementById(e.target.parentNode.parentNode.id);
+    const v2 = v1.getElementsByClassName("add");
+    const v3 = v2[0].getElementsByClassName("addsub1");
+    const v4 = v1.getElementsByClassName("div3sub");
 
-  arr1.push(v3[0].textContent);
-  arr2.push(v4[0].textContent);
+    arr1.push(v3[0].textContent);
+    arr2.push(v4[0].textContent);
+  } else {
+    console.log("g");
+    parent.style.borderColor = "var(--cool-gray)";
+    parent.style.backgroundColor = "";
+    const v1 = document.getElementById(e.target.parentNode.parentNode.id);
+    const v2 = v1.getElementsByClassName("add");
+    const v3 = v2[0].getElementsByClassName("addsub1");
+    const v4 = v1.getElementsByClassName("div3sub");
+    arr1 = arr1.filter((e) => v3[0].textContent !== e);
+
+    arr2 = arr2.filter((e) => v4[0].textContent !== e);
+  }
 }

@@ -9,6 +9,11 @@
   --pastel-blue: hsl(228, 100%, 84%);
   --light-blue: hsl(206, 94%, 87%);
   --strawberry-red: hsl(354, 84%, 57%);
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
 }
 
 .attribution {
@@ -23,6 +28,7 @@
 }
 .button {
   border-style: solid;
+  color: white;
   border-color: white;
   width: 40px;
   height: 40px;
@@ -33,10 +39,23 @@
 #cardbody {
   top: 57%;
 }
+.card-subtitle {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.card-title {
+  font-weight: 700;
+}
+::placeholder {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
 .footer {
   position: absolute;
   bottom: 0%;
 }
+
 .footerbutton {
   padding: 0.5rem 1rem 0.5rem 1rem;
   border: none;
@@ -49,8 +68,8 @@
   background-color: var(--light-blue);
 }
 .footer {
-  padding-top: 6px;
-  padding-bottom: 6px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   width: 100%;
   background-color: white;
 }
@@ -63,15 +82,21 @@ body {
 }
 .priceblock {
   border-style: solid;
-  padding: 2px 0px 2px 8px;
+  padding: 3px 0px 3px 8px;
   align-items: start;
   border-color: rgb(243, 240, 240);
   border-width: 0.1rem;
   border-radius: 0.5rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
+
 .price {
   padding-left: 10px;
+}
+.sub1 {
+  color: var(--marine-blue);
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 .sub2 {
   font-size: 0.8rem;
@@ -102,7 +127,7 @@ body {
   border-style: solid;
   padding: 2px 0px 2px 8px;
   align-items: start;
-  border-color: rgb(243, 240, 240);
+  border-color: var(--cool-gray);
   border-width: 0.1rem;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
@@ -124,8 +149,9 @@ body {
   width: 1.5rem;
   height: 1.5rem;
   border-style: solid;
-  border-color: rgb(245, 236, 236);
-  border-width: 1px;
+  border-color: var(--cool-gray);
+  border-width: 0.1px;
+  border-radius: 5px;
 }
 .add {
   padding-left: 1rem;
@@ -155,16 +181,23 @@ body {
   align-items: center;
 }
 .thankimg {
-  width: 4.5rem;
-  padding-bottom: 1.5rem;
-  padding-top: 2rem;
+  width: 5.5rem;
+  padding-bottom: 2rem;
+  padding-top: 4rem;
 }
 .thankyou {
   padding-bottom: 1.5rem;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--marine-blue);
 }
 .thankcont {
   text-align: center;
+  width: 18.3rem;
   padding-bottom: 3rem;
+  color: var(--cool-gray);
+  font-weight: 400;
+  font-size: 1rem;
 }
 .footerconfirm {
   padding: 0.5rem 1rem 0.5rem 1rem;
