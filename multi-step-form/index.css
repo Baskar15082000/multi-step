@@ -168,6 +168,9 @@ body {
 .final1 {
   justify-content: space-between;
   align-items: center;
+  border-bottom-style: solid;
+  border-bottom-color: var(--cool-gray);
+  border-bottom-width: 1px;
 }
 .final2 {
   justify-content: space-between;

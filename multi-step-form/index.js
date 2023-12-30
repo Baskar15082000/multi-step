@@ -255,6 +255,7 @@ function step4(val1, val2, check, arr1, arr2) {
   right1.style.fontWeight = "500";
   right1.style.fontSize = ".9rem";
   div1.append(left1, right1);
+
   maindiv.appendChild(div1);
   var t0 = 0;
   for (let i = 0; i < arr1.length; i++) {
