@@ -247,7 +247,7 @@ body {
   }
 
   #cardbody {
-    top: 1%;
+    top: 5%;
     left: 40%;
     height: 100%;
     border: none;
@@ -256,12 +256,13 @@ body {
   .buttons {
     flex-direction: row;
     left: 1%;
+    top: 5%;
   }
   .footer {
     width: 30rem;
     left: 44%;
-    top: 80%;
-    bottom: 11%;
+    top: 77%;
+    bottom: 15%;
   }
   .priceblock {
     width: 8.2rem;
