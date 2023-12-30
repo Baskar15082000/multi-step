@@ -24,7 +24,8 @@ function head(heading, subheading) {
 }
 
 function step1() {
-  document.getElementById("b1").style.backgroundColor = "lightblue";
+  document.getElementById("b1").style.backgroundColor = "var(--light-blue)";
+
   head(
     "Personal info",
     "Please provide your name, email address, and phone number."
@@ -70,7 +71,9 @@ step1();
 var month = document.createElement("label");
 var year = document.createElement("label");
 function step2(data, prices, prices1, link, plan) {
-  document.getElementById("b2").style.backgroundColor = "lightblue";
+  document.getElementById("b2").style.backgroundColor = "var(--light-blue)";
+  document.getElementById("b2").style.Color = "var(--marine-blue)";
+
   head("Select your plan", "You have the option of monthly or yearly billing");
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
@@ -158,6 +161,7 @@ function step2(data, prices, prices1, link, plan) {
 var check = "monthly";
 function step3(step3data1, step3data2, step3data3, step3data4, check) {
   document.getElementById("b3").style.backgroundColor = "lightblue";
+
   next[0].textContent = "Next step";
   next[0].style.backgroundColor = "var(--marine-blue)";
 
@@ -201,7 +205,7 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
     div3.style.fontSize = ".9rem";
     div3.style.color = "var(--purplish-blue)";
 
-    if (check === "month") {
+    if (check === "monthly") {
       div3.textContent = step3data3[i];
     } else {
       div3.textContent = step3data4[i];
@@ -218,6 +222,7 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
 
 function step4(val1, val2, check, arr1, arr2) {
   document.getElementById("b4").style.backgroundColor = "lightblue";
+
   next[0].textContent = "Confirm";
   next[0].style.backgroundColor = "var(--purplish-blue)";
 
@@ -289,7 +294,7 @@ function step4(val1, val2, check, arr1, arr2) {
   t1 = t1.split("/");
   t1 = t1[0];
   var total = parseInt(t0) + parseInt(t1);
-  if (check === "month") {
+  if (check === "monthly") {
     total = "$" + total + "/mo";
   } else {
     total = "$" + total + "/yr";
@@ -419,11 +424,12 @@ function pageselect(e) {
   console.log(block);
   for (let i = 0; i < block.length; i++) {
     block[i].style.borderColor = "gray";
+    block[i].style.backgroundColor = "";
   }
 
   //step4("ar", "$10", "month", "$14", ["on", "la"], ["$2", "$3"]);
   const v = document.getElementById(e.target.id);
-  if (check === "month") {
+  if (check === "monthly") {
     const v1 = v.getElementsByClassName("price");
     const v2 = v1[0].getElementsByClassName("sub1");
     const v3 = v1[0].getElementsByClassName("sub2");
@@ -439,7 +445,8 @@ function pageselect(e) {
     vans2 = v3[0].textContent;
   }
 
-  e.target.style.borderColor = "blue";
+  e.target.style.borderColor = "var(--purplish-blue)";
+  e.target.style.backgroundColor = "var(--light-blue)";
 }
 
 function pageselect1(e) {
@@ -455,6 +462,8 @@ function pageselect1(e) {
 
     arr1.push(v3[0].textContent);
     arr2.push(v4[0].textContent);
+    arr1 = [...new Set(array)];
+    arr2 = [...new Set(array)];
   } else {
     console.log("g");
     parent.style.borderColor = "var(--cool-gray)";
