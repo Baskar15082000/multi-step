@@ -69,10 +69,11 @@ function step1() {
 }
 
 step1();
+var check = "monthly";
 var month = document.createElement("label");
 var year = document.createElement("label");
 
-function step2(data, prices, prices1, link, plan) {
+function step2(data, prices, prices1, link) {
   document.getElementById("b2").style.backgroundColor = "var(--light-blue)";
 
   head("Select your plan", "You have the option of monthly or yearly billing");
@@ -155,17 +156,16 @@ function step2(data, prices, prices1, link, plan) {
 
   currentStep = 2;
   goBack.style.display = "block";
-  if (plan === "year") {
-    toggleSwitch.checked = true;
-  } else {
-    toggleSwitch.checked = false;
-  }
+  // if (plan === "year") {
+  //   toggleSwitch.checked = true;
+  // } else {
+  //   toggleSwitch.checked = false;
+  // }
 }
 
 // Pick add-ons Add-ons help enhance your gaming experience. Online service
 // Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
 // +$2/mo Customizable Profile Custom theme on your profile +$2/mo
-var check = "monthly";
 function step3(step3data1, step3data2, step3data3, step3data4, check) {
   document.getElementById("b3").style.backgroundColor = "lightblue";
 
@@ -229,6 +229,7 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
 }
 
 function step4(val1, val2, check, arr1, arr2) {
+  console.log(val1 + "  " + val2);
   document.getElementById("b4").style.backgroundColor = "lightblue";
   s4.createElement = document.createElement("div");
   next[0].textContent = "Confirm";
@@ -382,6 +383,8 @@ function nextpage(e) {
     var toggleSwitch = document.getElementById("toggleSwitch");
     toggleSwitch.addEventListener("change", toggle);
   } else if (currentStep === 2) {
+    arr1 = [];
+    arr2 = [];
     cardBody.replaceChildren();
     step3(step3data1, step3data2, step3data3, step3data4, check);
   } else if (currentStep === 3) {
@@ -423,6 +426,13 @@ function toggle(e) {
   const sub3 = document.querySelectorAll(".sub3");
   const sub2 = document.querySelectorAll(".sub2");
   const sub4 = document.querySelectorAll(".sub4");
+  const block = document.getElementsByClassName("priceblock");
+  console.log(block);
+  for (let i = 0; i < block.length; i++) {
+    block[i].style.borderColor = "gray";
+    block[i].style.backgroundColor = "";
+  }
+
   if (e.target.checked) {
     for (let i = 0; i < 3; i++) {
       sub2[i].style.display = "none";
@@ -430,9 +440,10 @@ function toggle(e) {
       sub4[i].style.display = "block";
     }
     check = "yearly";
-    console.log(sub3);
+    console.log(sub3[0]);
     year.style.color = "var(--marine-blue)";
     month.style.color = "";
+    console.log(check);
   } else {
     for (let i = 0; i < 3; i++) {
       sub2[i].style.display = "block";
@@ -442,6 +453,7 @@ function toggle(e) {
     month.style.color = "var(--marine-blue)";
     year.style.color = "";
     check = "monthly";
+    console.log(check);
   }
 }
 
@@ -449,7 +461,7 @@ function pageselect(e) {
   const block = document.getElementsByClassName(e.target.className);
   console.log(block);
   for (let i = 0; i < block.length; i++) {
-    block[i].style.borderColor = "gray";
+    block[i].style.borderColor = "var(--cool-gray)";
     block[i].style.backgroundColor = "";
   }
 
