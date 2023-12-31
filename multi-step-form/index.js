@@ -22,7 +22,10 @@ function head(heading, subheading) {
 
   cardSubtitle.innerHTML = "<span id='subhead'>" + subheading + "</span>";
 }
-
+var s1 = "";
+var s2 = "";
+var s3 = "";
+var s4 = "";
 function step1() {
   document.getElementById("b1").style.backgroundColor = "var(--light-blue)";
   goBack.style.display = "none";
@@ -30,6 +33,7 @@ function step1() {
     "Personal info",
     "Please provide your name, email address, and phone number."
   );
+  s1 = document.createElement("div");
   const form = document.createElement("form");
   const formGroup = document.createElement("div");
   formGroup.classList.add("form-group");
@@ -60,24 +64,22 @@ function step1() {
   });
 
   form.appendChild(formGroup);
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardSubtitle);
-  cardBody.appendChild(form);
-
-  const card = document.getElementById("cardbody");
-  card.appendChild(cardBody);
+  s1.append(cardTitle, cardSubtitle, form);
+  cardBody.appendChild(s1);
 }
+
 step1();
 var month = document.createElement("label");
 var year = document.createElement("label");
+
 function step2(data, prices, prices1, link, plan) {
   document.getElementById("b2").style.backgroundColor = "var(--light-blue)";
-  document.getElementById("b2").style.Color = "var(--marine-blue)";
 
   head("Select your plan", "You have the option of monthly or yearly billing");
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardSubtitle);
+  s2 = document.createElement("div");
   const page1outer = document.createElement("div");
+  s2.appendChild(cardTitle);
+  s2.appendChild(cardSubtitle);
   page1outer.className = "page_2  d-flex flex-column  flex-lg-row";
   for (let i = 0; i < 3; i++) {
     const maindiv = document.createElement("div");
@@ -122,7 +124,8 @@ function step2(data, prices, prices1, link, plan) {
 
     page1outer.appendChild(maindiv);
   }
-  cardBody.appendChild(page1outer);
+  s2.appendChild(page1outer);
+
   page1outer.addEventListener("click", pageselect);
   var containerDiv = document.createElement("div");
   containerDiv.className = "form-check form-switch d-flex py-2 px-5 ";
@@ -146,7 +149,9 @@ function step2(data, prices, prices1, link, plan) {
   containerDiv.appendChild(month);
   containerDiv.appendChild(inputElement);
   containerDiv.appendChild(year);
-  cardBody.appendChild(containerDiv);
+
+  s2.appendChild(containerDiv);
+  cardBody.appendChild(s2);
 
   currentStep = 2;
   goBack.style.display = "block";
@@ -166,10 +171,10 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
 
   next[0].textContent = "Next step";
   next[0].style.backgroundColor = "var(--marine-blue)";
-
+  s3 = document.createElement("div");
   head("Pick add-ons", "Add-ons help enhance your gaming experience.");
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardSubtitle);
+  s3.appendChild(cardTitle);
+  s3.appendChild(cardSubtitle);
   const page3outer = document.createElement("div");
   page3outer.className = "page3outer";
   for (let i = 0; i < 3; i++) {
@@ -216,7 +221,8 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
     maindiv.append(div1, div2, div3);
     page3outer.appendChild(maindiv);
   }
-  cardBody.appendChild(page3outer);
+  s3.appendChild(page3outer);
+  cardBody.appendChild(s3);
   page3outer.addEventListener("change", pageselect1);
 
   currentStep = 3;
@@ -224,13 +230,14 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
 
 function step4(val1, val2, check, arr1, arr2) {
   document.getElementById("b4").style.backgroundColor = "lightblue";
-
+  s4.createElement = document.createElement("div");
   next[0].textContent = "Confirm";
   next[0].style.backgroundColor = "var(--purplish-blue)";
 
   head("Finishing up", "Double-check everything looks OK before confirming.");
-  cardBody.appendChild(cardTitle);
-  cardBody.appendChild(cardSubtitle);
+  s4 = document.createElement("div");
+  s4.appendChild(cardTitle);
+  s4.appendChild(cardSubtitle);
   const maindiv = document.createElement("div");
   maindiv.className = "finish d-flex flex-column";
 
@@ -245,7 +252,7 @@ function step4(val1, val2, check, arr1, arr2) {
   div1sub1.style.color = "var(--marine-blue)";
   div1sub1.style.fontWeight = "500";
   div1sub1.style.fontSize = ".9rem";
-  div1sub2.innerHTML = `<u>change</u>`;
+  div1sub2.innerHTML = `<u id = changed>change</u>`;
   div1sub2.style.color = "var(--cool-gray)";
   div1sub2.style.fontWeight = "400";
   div1sub2.style.fontSize = ".9rem";
@@ -259,7 +266,7 @@ function step4(val1, val2, check, arr1, arr2) {
   div1.append(left1, right1);
 
   maindiv.appendChild(div1);
-  var t0 = 0;
+  var t1 = 0;
   for (let i = 0; i < arr1.length; i++) {
     const div2 = document.createElement("div");
     div2.className = "final2 d-flex p-1 flex-row";
@@ -269,20 +276,29 @@ function step4(val1, val2, check, arr1, arr2) {
     div2sub1.style.color = "var(--cool-gray)";
     div2sub1.style.fontWeight = "400";
     div2sub1.style.fontSize = ".9rem";
-    div2sub2.textContent = arr2[i];
+    var conversion = arr2[i].split("/");
+    console.log(conversion);
+    if (check === "monthly") {
+      conversion[1] = "/mo";
+    } else {
+      conversion[1] = "/yr";
+    }
+    conversion = conversion.join("");
+    div2sub2.textContent = conversion;
     div2sub2.style.color = "var(--cool-gray)";
     div2sub2.style.fontWeight = "400";
     div2sub2.style.fontSize = ".9rem";
-    t0 = arr2[i].split("$");
+    var t0 = arr2[i].split("$");
     t0 = t0.join(" ");
     t0 = t0.split("+");
     t0 = t0.join(" ");
     t0 = t0.split("/");
     t0 = t0[0];
+    t1 += parseInt(t0);
     div2.append(div2sub1, div2sub2);
     maindiv.appendChild(div2);
   }
-  cardBody.appendChild(maindiv);
+  s4.appendChild(maindiv);
   const final = document.createElement("div");
   final.className = "total d-flex flex-row";
   const finalsub1 = document.createElement("div");
@@ -291,12 +307,12 @@ function step4(val1, val2, check, arr1, arr2) {
   finalsub1.style.color = "var(--cool-gray)";
   finalsub1.style.fontWeight = "400";
   finalsub1.style.fontSize = ".9rem";
-  var t1 = 0;
-  t1 = val2.split("$");
-  t1 = t1.join(" ");
-  t1 = t1.split("/");
-  t1 = t1[0];
-  var total = parseInt(t0) + parseInt(t1);
+  var t2 = 0;
+  t2 = val2.split("$");
+  t2 = t2.join(" ");
+  t2 = t2.split("/");
+  t2 = t2[0];
+  var total = t1 + parseInt(t2);
   if (check === "monthly") {
     total = "$" + total + "/mo";
   } else {
@@ -306,7 +322,8 @@ function step4(val1, val2, check, arr1, arr2) {
   finalsub2.style.color = "var(--purplish-blue)";
   final.append(finalsub1, finalsub2);
   currentStep = 4;
-  cardBody.appendChild(final);
+  s4.appendChild(final);
+  cardBody.appendChild(s4);
 }
 
 function step5() {
@@ -338,8 +355,8 @@ const step3data2 = [
   "Extra 1TB of cloud save",
   "Custom theme on your profile",
 ];
-const step3data3 = ["+$1/mo", "+$2/mo", "+$2/mo"];
-const step3data4 = ["+$10/yr", "+$20/yr", "+$20/yr"];
+const step3data3 = ["+$1/mo", "+$2/mo", "+$2/Mo"];
+const step3data4 = ["+$10/yr", "+$20/yr", "+$20/Yr"];
 
 const data = ["Arcade", "Advanced", "Pro"];
 const prices = ["$9/mo", "$12/mo", "$15/mo"];
@@ -380,18 +397,24 @@ function gobackfunc() {
   button.forEach((e) => (e.style.backgroundColor = ""));
 
   if (currentStep === 2) {
-    cardBody.replaceChildren();
-    step1();
+    document.getElementById("b1").style.backgroundColor = "var(--light-blue)";
+    goBack.style.display = "none";
+    cardBody.replaceChildren(s1);
+
     currentStep--;
   } else if (currentStep === 3) {
+    document.getElementById("b2").style.backgroundColor = "var(--light-blue)";
     currentStep--;
-    cardBody.replaceChildren();
-    step2(data, prices, prices1, link, "month");
+    cardBody.replaceChildren(s2);
+
     var toggleSwitch = document.getElementById("toggleSwitch");
     toggleSwitch.addEventListener("change", toggle);
   } else if (currentStep === 4) {
-    cardBody.replaceChildren();
-    step3(step3data1, step3data2, step3data3, step3data4, check);
+    document.getElementById("b3").style.backgroundColor = "var(--light-blue)";
+    next[0].textContent = "Next Step";
+    next[0].style.backgroundColor = "var(--marine-blue)";
+    cardBody.replaceChildren(s3);
+    currentStep--;
   }
 }
 
@@ -465,8 +488,8 @@ function pageselect1(e) {
 
     arr1.push(v3[0].textContent);
     arr2.push(v4[0].textContent);
-    arr1 = [...new Set(array)];
-    arr2 = [...new Set(array)];
+    arr1 = [...new Set(arr1)];
+    arr2 = [...new Set(arr2)];
   } else {
     console.log("g");
     parent.style.borderColor = "var(--cool-gray)";
@@ -476,7 +499,6 @@ function pageselect1(e) {
     const v3 = v2[0].getElementsByClassName("addsub1");
     const v4 = v1.getElementsByClassName("div3sub");
     arr1 = arr1.filter((e) => v3[0].textContent !== e);
-
     arr2 = arr2.filter((e) => v4[0].textContent !== e);
   }
 }

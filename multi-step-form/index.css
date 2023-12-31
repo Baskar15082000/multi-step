@@ -221,6 +221,16 @@ body {
 .db_1 {
   display: none;
 }
+.goBack {
+  cursor: pointer;
+}
+.footerbutton:hover {
+  opacity: 0.5;
+}
+.goBack {
+  color: var(--marine-blue);
+  font-weight: 500;
+}
 @media only screen and (min-width: 1024px) {
   * {
     overflow: hidden;
@@ -265,6 +275,7 @@ body {
     bottom: 15%;
   }
   .priceblock {
+    cursor: pointer;
     width: 8.2rem;
   }
   .img {
@@ -299,5 +310,24 @@ body {
     font-weight: 400;
     font-size: 0.9rem;
     color: white;
+  }
+  .priceblock:hover {
+    border-color: var(--purplish-blue);
+  }
+
+  .addOn:hover {
+    border-color: var(--purplish-blue);
+    cursor: pointer;
+  }
+  .form-check {
+    cursor: pointer;
+  }
+  #input:hover {
+    border-color: var(--purplish-blue);
+    cursor: pointer;
+  }
+  #changed:hover {
+    color: var(--purplish-blue);
+    cursor: pointer;
   }
 }
