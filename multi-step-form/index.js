@@ -383,10 +383,14 @@ function nextpage(e) {
     var toggleSwitch = document.getElementById("toggleSwitch");
     toggleSwitch.addEventListener("change", toggle);
   } else if (currentStep === 2) {
-    arr1 = [];
-    arr2 = [];
-    cardBody.replaceChildren();
-    step3(step3data1, step3data2, step3data3, step3data4, check);
+    if (vans1 === "" && vans2 === "") {
+      alert("please select any plan to continue");
+    } else {
+      arr1 = [];
+      arr2 = [];
+      cardBody.replaceChildren();
+      step3(step3data1, step3data2, step3data3, step3data4, check);
+    }
   } else if (currentStep === 3) {
     cardBody.replaceChildren();
     step4(vans1, vans2, check, arr1, arr2);
