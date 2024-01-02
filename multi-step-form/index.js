@@ -28,6 +28,7 @@ var s3 = "";
 var s4 = "";
 function step1() {
   document.getElementById("b1").style.backgroundColor = "var(--light-blue)";
+  document.getElementById("b1").style.color = "var(--marine-blue)";
   goBack.style.display = "none";
   head(
     "Personal info",
@@ -75,7 +76,7 @@ var year = document.createElement("label");
 
 function step2(data, prices, prices1, link) {
   document.getElementById("b2").style.backgroundColor = "var(--light-blue)";
-
+  document.getElementById("b2").style.color = "var(--marine-blue)";
   head("Select your plan", "You have the option of monthly or yearly billing");
   s2 = document.createElement("div");
   const page1outer = document.createElement("div");
@@ -168,6 +169,7 @@ function step2(data, prices, prices1, link) {
 // +$2/mo Customizable Profile Custom theme on your profile +$2/mo
 function step3(step3data1, step3data2, step3data3, step3data4, check) {
   document.getElementById("b3").style.backgroundColor = "lightblue";
+  document.getElementById("b3").style.color = "var(--marine-blue)";
 
   next[0].textContent = "Next step";
   next[0].style.backgroundColor = "var(--marine-blue)";
@@ -231,6 +233,7 @@ function step3(step3data1, step3data2, step3data3, step3data4, check) {
 function step4(val1, val2, check, arr1, arr2) {
   console.log(val1 + "  " + val2);
   document.getElementById("b4").style.backgroundColor = "lightblue";
+  document.getElementById("b4").style.color = "var(--marine-blue)";
   s4.createElement = document.createElement("div");
   next[0].textContent = "Confirm";
   next[0].style.backgroundColor = "var(--purplish-blue)";
@@ -375,7 +378,10 @@ var arr1 = [];
 var arr2 = [];
 next[0].addEventListener("click", nextpage);
 function nextpage(e) {
-  button.forEach((e) => (e.style.backgroundColor = ""));
+  button.forEach((e) => {
+    e.style.backgroundColor = "";
+    e.style.color = "white";
+  });
 
   if (currentStep === 1) {
     cardBody.replaceChildren();
@@ -401,16 +407,21 @@ function nextpage(e) {
 }
 
 function gobackfunc() {
-  button.forEach((e) => (e.style.backgroundColor = ""));
+  button.forEach((e) => {
+    e.style.backgroundColor = "";
+    e.style.color = "white";
+  });
 
   if (currentStep === 2) {
     document.getElementById("b1").style.backgroundColor = "var(--light-blue)";
+    document.getElementById("b1").style.color = "var(--marine-blue)";
     goBack.style.display = "none";
     cardBody.replaceChildren(s1);
 
     currentStep--;
   } else if (currentStep === 3) {
     document.getElementById("b2").style.backgroundColor = "var(--light-blue)";
+    document.getElementById("b2").style.color = "var(--marine-blue)";
     currentStep--;
     cardBody.replaceChildren(s2);
 
@@ -418,6 +429,7 @@ function gobackfunc() {
     toggleSwitch.addEventListener("change", toggle);
   } else if (currentStep === 4) {
     document.getElementById("b3").style.backgroundColor = "var(--light-blue)";
+    document.getElementById("b3").style.color = "var(--marine-blue)";
     next[0].textContent = "Next Step";
     next[0].style.backgroundColor = "var(--marine-blue)";
     cardBody.replaceChildren(s3);
