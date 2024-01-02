@@ -356,8 +356,8 @@ const step3data2 = [
   "Extra 1TB of cloud save",
   "Custom theme on your profile",
 ];
-const step3data3 = ["+$1/mo", "+$2/mo", "+$2/Mo"];
-const step3data4 = ["+$10/yr", "+$20/yr", "+$20/Yr"];
+const step3data3 = ["+$1/mo", "+$2/mo", "+$2/mo "];
+const step3data4 = ["+$10/yr", "+$20/yr", "+$20/yr "];
 
 const data = ["Arcade", "Advanced", "Pro"];
 const prices = ["$9/mo", "$12/mo", "$15/mo"];
